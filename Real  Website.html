@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOMATO</title>
+    <style>
+        body {
+            background-image: url(food.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 1400px;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: url('food.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header div:first-child {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff4d4d;
+        }
+
+
+        header a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        header a:hover {
+            color: #ff4d4d;
+        }
+
+
+        main {
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        main div:first-child {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+        main img {
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+        main p {
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        main h2 {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        input{
+            color: black;
+            background-color: white;
+            font-size: 25px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+    const searchInput = document.querySelector('input[placeholder="Search For Food"]');
+
+    searchInput.addEventListener('keyup', function (event) {
+        if (event.key === "Enter") {
+            const query = searchInput.value.trim();
+            if (query) {
+                alert("You searched for: " + query);
+            } else {
+                alert("Please enter a food item to search.");
+            }
+        }
+    });
+
+
+    window.addEventListener('scroll', function () {
+        const offerSection = document.querySelector('h2');
+        const position = offerSection.getBoundingClientRect();
+
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+            console.log("User sees the offer section!");
+        }
+    });
+
+    const navLinks = document.querySelectorAll('header a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const confirmNav = confirm("Do you really want to go to " + link.textContent + "?");
+            if (!confirmNav) {
+                e.preventDefault(); // cancel the link
+            }
+        });
+    });
+    console.log("Welcome to Zomato Clone Website!");
+</script>
+
+    <header>
+        <DIV>Zomato</DIV>
+        <div>
+            <a href="/home">Home </a>
+            <a href="/about us">About us </a>
+            <a href="/contact">Contact</a>
+            <a href="/order now">Order Now </a>
+            <a href="/Check Now">Check Now</a>
+            <a href="/more info">More Information</a>
+
+        </div>
+    </header>
+    <main>
+        <div>Order Food Anytime, Anywhere</div>
+       <center><strong><input placeholder="Search For Food"></strong></center>
+
+        <br>
+        <img src="pizza.jpg" height="230px">
+        <img src="burger.jpg" height="230px">
+        <img src="momos.jpg" height="190px">
+        <img src="chicken.jpg" height="190px">
+
+
+
+        <p>Zomato is an Indian multinational that serves as a food discovery and delivery platform, allowing customers
+            to order food online, find restaurants, and make table reservations. Founded in 2008, the company provides a
+            technology-driven ecosystem that connects millions of users with restaurants and delivery partners across
+            India and other countries.</p>
+
+
+        <h2>The First Order is Flat 50% OFF</h2>
+
+
+        <p>North Indian, Italian, Chinese, Biryani, Sushi, Pasta, and even specific dishes like Biryani, Butter Chicken,
+            Pasta, and Samosas. You can find these by searching for cuisines or dishes on the Zomato app or website,
+            which also highlights vegetarian and healthy options, plus offers intercity delivery of iconic dishes from
+            other cities.</p>
+    </main>
+    <footer> The Zomato Orders is all india delivery</footer>
+</body>
+
+</html>
